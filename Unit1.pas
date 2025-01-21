@@ -149,14 +149,15 @@ begin
       vODS := RightStr(vODS_temp, Length(vODS_temp)-12);
 
        // Identifica a versão Firebird com base na ODS
-      if vODS = '13.1' then lbFBv.Caption := 'Firebird 5.0';
-      if vODS = '13.0' then lbFBv.Caption := 'Firebird 4.0';
-      if vODS = '12.0' then lbFBv.Caption := 'Firebird 3.0';
-      if vODS = '11.2' then lbFBv.Caption := 'Firebird 2.5';
-      if vODS = '11.1' then lbFBv.Caption := 'Firebird 2.1';
-      if vODS = '11.0' then lbFBv.Caption := 'Firebird 2.0';
-      if vODS = '10.1' then lbFBv.Caption := 'Firebird 1.5';
-      if vODS = '10.0' then lbFBv.Caption := 'Firebird 1.0';
+      if vODS = '13.1' then lbFBv.Caption := 'Firebird 5.0'
+         else if vODS = '13.0' then lbFBv.Caption := 'Firebird 4.0'
+            else if vODS = '12.0' then lbFBv.Caption := 'Firebird 3.0'
+               else if vODS = '11.2' then lbFBv.Caption := 'Firebird 2.5'
+                  else if vODS = '11.1' then lbFBv.Caption := 'Firebird 2.1'
+                     else if vODS = '11.0' then lbFBv.Caption := 'Firebird 2.0'
+                        else if vODS = '10.1' then lbFBv.Caption := 'Firebird 1.5'
+                           else if vODS = '10.0' then lbFBv.Caption := 'Firebird 1.0'
+                              else lbFBv.Caption := 'Versão desconhecida do Firebird';
 
       FDConnection1.Connected := False;
       Break;
