@@ -178,10 +178,11 @@ object Form1: TForm1
     TabOrder = 1
   end
   object Memo1: TMemo
-    Left = 16
+    Left = 23
     Top = 311
     Width = 593
     Height = 109
+    ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 2
   end
