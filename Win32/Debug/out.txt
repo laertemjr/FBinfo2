@@ -1,26 +1,29 @@
 
-Database "D:\OneDrive\Documentos\Tech\Programacao\Delphi\Firebird\Bancos_de_testes\BD_TESTE_FB10.FDB"
+Database "D:\ONEDRIVE\DOCUMENTOS\EMBARCADERO\STUDIO\PROJECTS\MASTERDETAIL\WIN32\DEBUG\MD_FB50.FDB"
+Gstat execution time Mon Jan 27 22:31:53 2025
 
 Database header page information:
 	Flags			0
-	Checksum		12345
-	Generation		21
-	Page size		1024
-	ODS version		10.0
-	Oldest transaction	16
-	Oldest active		17
-	Oldest snapshot		17
-	Next transaction	20
-	Bumped transaction	1
+	Generation		111
+	System Change Number	0
+	Page size		8192
+	ODS version		13.1
+	Oldest transaction	103
+	Oldest active		104
+	Oldest snapshot		104
+	Next transaction	104
 	Sequence number		0
-	Next attachment ID	0
-	Implementation ID	16
+	Next attachment ID	12
+	Implementation		HW=AMD/Intel/x64 little-endian OS=Windows CC=MSVC
 	Shadow count		0
 	Page buffers		0
 	Next header page	0
 	Database dialect	3
-	Creation date		Jan 4, 2025 22:03:35
+	Creation date		Jan 28, 2025 1:25:54
 	Attributes		force write
 
     Variable header data:
+	Database GUID:	{FCBF18E8-1305-4F0C-86CE-9FB200A043F4}
 	*END*
+Gstat completion time Mon Jan 27 22:31:53 2025
+
