@@ -2,7 +2,8 @@ program FBinfo2;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1},
+  uFBInfo2 in 'uFBInfo2.pas' {frmFBInfo},
+  uMultiLanguage in 'uMultiLanguage.pas',
   uGlobal in 'uGlobal.pas';
 
 {$R *.res}
@@ -10,6 +11,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmFBInfo, frmFBInfo);
   Application.Run;
 end.
