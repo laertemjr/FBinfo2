@@ -1,4 +1,4 @@
-object frmFBInfo: TfrmFBInfo
+object frmFBInfo2: TfrmFBInfo2
   Left = 0
   Top = 0
   Caption = 
@@ -207,7 +207,6 @@ object frmFBInfo: TfrmFBInfo
     Height = 106
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 320
     object Label8: TLabel
       Left = 187
       Top = 8

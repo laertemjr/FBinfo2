@@ -13,7 +13,7 @@ uses
    FireDAC.Phys.FB, FireDAC.Comp.Client, FireDAC.Phys.IBWrapper, Winapi.ShellAPI;
 
 type
-   TfrmFBInfo = class(TForm)
+   TfrmFBInfo2 = class(TForm)
       OpenDialog1: TOpenDialog;
       btnBrowse: TButton;
       Label1: TLabel;
@@ -71,11 +71,11 @@ type
    end;
 
 var
-   frmFBInfo: TfrmFBInfo;
+   frmFBInfo2: TfrmFBInfo2;
    iniconf: TIniFile;
    port: array[0..3] of string = ('','','','');
    SoEdt: Boolean;
-   strngs: array[0..9] of string = ('','','','','','','','','','');
+   strngs: array[0..4] of string = ('','','','','');
    // To use with FDIBInfo1.GetVersion()
    rVer : TIBInfo.TVersion;
    rConf : TIBInfo.TConfig;
@@ -94,7 +94,7 @@ uses
 •	Firebird 1.5 server: port 3015, compatible with the version 1.0
 }
 
-procedure TfrmFBInfo.FormActivate(Sender: TObject);
+procedure TfrmFBInfo2.FormActivate(Sender: TObject);
 begin
    // Parameters required to use FDIBInfo1
    FDIBInfo1.DriverLink := FDPhysFBDriverLink1;
@@ -107,7 +107,7 @@ begin
    ptBR;
 end;
 
-procedure TfrmFBInfo.btnBrowseClick(Sender: TObject);
+procedure TfrmFBInfo2.btnBrowseClick(Sender: TObject);
 var
   i, j:integer;
   s, pathExe, pathBD, pathTXT, vODS, vODS_temp :string;
@@ -221,7 +221,7 @@ begin
      end;
 end;
 
-procedure TfrmFBInfo.conectParams;
+procedure TfrmFBInfo2.conectParams;
 begin
    FDConnection1.Params.Clear;
    // DriverName
@@ -242,7 +242,7 @@ begin
    FDConnection1.LoginPrompt := False;
 end;
 
-procedure TfrmFBInfo.btnEditClick(Sender: TObject);
+procedure TfrmFBInfo2.btnEditClick(Sender: TObject);
 begin
    if btnEdit.Caption = strngs[3] then // &Save
    begin
@@ -262,7 +262,7 @@ begin
    EdtReadOnly(False);
 end;
 
-procedure TfrmFBInfo.btnCancelClick(Sender: TObject);
+procedure TfrmFBInfo2.btnCancelClick(Sender: TObject);
 begin
    loadConfigINI;
    btnCancel.Enabled := False;
@@ -270,7 +270,7 @@ begin
    EdtReadOnly(True);
 end;
 
-procedure TfrmFBInfo.clean;
+procedure TfrmFBInfo2.clean;
 begin
    OpenDialog1.FileName := EmptyStr;
    edtBD.Text := EmptyStr;
@@ -284,7 +284,7 @@ begin
    Memo1.Clear;
 end;
 
-procedure TfrmFBInfo.SetIniValue(pLocal, pSession, pSubSession, pValue:string);
+procedure TfrmFBInfo2.SetIniValue(pLocal, pSession, pSubSession, pValue:string);
 var vArquivo:TIniFile;
 begin
    vArquivo:=TIniFile.Create(pLocal);
@@ -292,7 +292,7 @@ begin
    vArquivo.Free;
 end;
 
-function TfrmFBInfo.GetIniValue(pLocal, PSession, pSubSession:string):string;
+function TfrmFBInfo2.GetIniValue(pLocal, PSession, pSubSession:string):string;
 var vArquivo:TIniFile;
 begin
    vArquivo:=TIniFile.Create(plocal);
@@ -300,7 +300,7 @@ begin
    vArquivo.Free;
 end;
 
-procedure TfrmFBInfo.loadConfigINI;
+procedure TfrmFBInfo2.loadConfigINI;
 begin
    edtFB15.Text := iniconf.ReadString('Port','FB15','');
    port[3] := edtFB15.Text;
@@ -316,7 +316,7 @@ begin
 end;
 
 // If it is a long path (with space characters), wrap it in double quotes.
-function TfrmFBInfo.verifySpaces(path:string) : string;
+function TfrmFBInfo2.verifySpaces(path:string) : string;
 begin
    if Pos(' ', path) > 0 then
    begin
@@ -327,7 +327,7 @@ begin
       Result := path;
 end;
 
-procedure TfrmFBInfo.EdtReadOnly(state: Boolean);
+procedure TfrmFBInfo2.EdtReadOnly(state: Boolean);
 begin
    edtFB15.ReadOnly := state;
    edtFB25.ReadOnly := state;
@@ -335,12 +335,12 @@ begin
    edtFB50.ReadOnly := state;
 end;
 
-procedure TfrmFBInfo.btn_enClick(Sender: TObject);
+procedure TfrmFBInfo2.btn_enClick(Sender: TObject);
 begin
    en;
 end;
 
-procedure TfrmFBInfo.btn_ptBRClick(Sender: TObject);
+procedure TfrmFBInfo2.btn_ptBRClick(Sender: TObject);
 begin
    ptBR;
 end;
